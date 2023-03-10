@@ -1,0 +1,11 @@
+#createNote {
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 215px;
+    height: 44px;
+    left: 35px;
+    top: 35px;
+
+    border: 1px solid #000000;
+}

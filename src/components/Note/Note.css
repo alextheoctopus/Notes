@@ -1,0 +1,31 @@
+#noteList {
+
+    position: absolute;
+    width: 319px;
+    height: 308px;
+    left: 35px;
+    top: 131px;
+
+    background: #D9D9D9
+}
+
+#edit {
+
+    position: absolute;
+    width: 39px;
+    height: 32px;
+    left: 206px;
+    top: 10px;
+
+    background: #FFFFFF;
+}
+
+#delete {
+    position: absolute;
+    width: 39px;
+    height: 32px;
+    left: 256px;
+    top: 10px;
+
+    background: #FFFFFF;
+}
