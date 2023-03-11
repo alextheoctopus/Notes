@@ -1,6 +1,6 @@
 import './Note.css';
 
-const Note = ({ openedNote/* ,setEditNote */ }) => {
+const Note = ({ data }) => {
 
     const btnOnClickHandlerEdit = () => {
         //setEditNote(true);
@@ -15,7 +15,7 @@ const Note = ({ openedNote/* ,setEditNote */ }) => {
             <div className="noteList" >
                 <button className="edit" onClick={btnOnClickHandlerEdit}>Редактировать</button>
                 <button className="delete" onClick={btnOnClickHandlerDelete}>Удалить</button>
-                <p>{openedNote.value}</p>
+                <p>{data.value}</p>
             </div>
         </>
 

@@ -6,15 +6,29 @@ import Header from "./components/Header/Header";
 const App = () => {
 
 
-  const [notes, setNotes] = useState([1]);
-  const [openedNote, setOpenedNote] = useState({ state: false, value: '' });
+  const [notes, setNotes] = useState([{ id: 1, value: 'first note' }]);
+  const [openedNote, setOpenedNote] = useState({ state: false });
+
+
+  const closeOpenedNote = () => {
+    setOpenedNote({ state: false });
+  }
+
+  const createNote = () => {
+    closeOpenedNote();  
+    console.log(notes);
+  }
+
 
   return (
     <>
       <Header setOpenedNote={setOpenedNote} />
-      {openedNote.state === true ? <OpenedNote notes={notes} setNotes={setNotes} setOpenedNote={setOpenedNote} /> : ''}
+
+      {openedNote.state === true ?
+        <OpenedNote createNote={createNote} setNotes={setNotes} closeOpenedNote={closeOpenedNote} notes={notes} setOpenedNote={setOpenedNote} />
+        : ''}
       <div key={notes.length}>
-        {notes.map((item, index) => <Note key={index} openedNote={openedNote}></Note>)}
+        {notes.map((item, index) => <Note key={index} openedNote={openedNote} data={item} />)}
       </div>
     </>
   )

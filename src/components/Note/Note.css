@@ -1,20 +1,12 @@
 .noteList {
     position: relative;
     display: inline-block;
-    width: 319px;
-    height: 308px;
     left: 35px;
     top: 100px;
     margin-left: 5px;
     margin-top: 20px;
 }
 
-.input {
-    width: 311px;
-    height: 200px;
-    left: 35px;
-    top: 131px;
-}
 
 .save{
     height:30px;
