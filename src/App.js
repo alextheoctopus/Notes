@@ -14,23 +14,20 @@ const App = () => {
     setOpenedNote({ state: false });
   }
 
-  const createNote = () => {
-    closeOpenedNote();  
-    console.log(notes);
-  }
 
+  console.log(notes);
 
   return (
-    <>
+    <div className="wholeApp">
       <Header setOpenedNote={setOpenedNote} />
 
       {openedNote.state === true ?
-        <OpenedNote createNote={createNote} setNotes={setNotes} closeOpenedNote={closeOpenedNote} notes={notes} setOpenedNote={setOpenedNote} />
+        <OpenedNote setNotes={setNotes} closeOpenedNote={closeOpenedNote} notes={notes} setOpenedNote={setOpenedNote} />
         : ''}
       <div key={notes.length}>
         {notes.map((item, index) => <Note key={index} openedNote={openedNote} data={item} />)}
       </div>
-    </>
+    </div>
   )
 }
 export default App;

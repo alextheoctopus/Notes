@@ -15,7 +15,7 @@ const Note = ({ data }) => {
             <div className="noteList" >
                 <button className="edit" onClick={btnOnClickHandlerEdit}>Редактировать</button>
                 <button className="delete" onClick={btnOnClickHandlerDelete}>Удалить</button>
-                <p>{data.value}</p>
+                <p className="text1">{data.value}</p>
             </div>
         </>
 

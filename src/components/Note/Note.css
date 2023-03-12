@@ -1,40 +1,43 @@
 .noteList {
     position: relative;
     display: inline-block;
+
     left: 35px;
-    top: 100px;
+    top: 131px;
+    width: 319px;
+    background: rgba(253, 252, 252, 0.82);
+    border-radius: 15px;
     margin-left: 5px;
     margin-top: 20px;
 }
 
-
-.save{
-    height:30px;
-    width: 320px;
-    border:none;
+.text1 {
+    top: 50px;
+    padding-left: 20px;
 }
 
-.edit{
-    box-sizing: border-box;
 
-    width: 110px;
+
+.edit {
+    position: relative;
+    width: 113px;
     height: 32px;
     left: 16px;
     top: 10px;
 
-    background: #FFFFFF;
-    border: 1px solid #000000
+    background: #3523A9;
+    border-radius: 10px;
+    border: none;
 }
 
 .delete {
-
-    box-sizing: border-box;
-
+    position: absolute;
     width: 113px;
     height: 32px;
-    left: 127px;
+    left: 188px;
     top: 10px;
 
-    background: #FFFFFF;
-    border: 1px solid #000000;
+    background: #3523A9;
+    border-radius: 10px;
+    border: none;
 }

@@ -1,9 +1,43 @@
-#openedNote {
+.openedNote {
     position: absolute;
-    width: 672px;
-    height: 404px;
-    left: 384px;
-    top: 310px;
+    width: 599px;
+    height: 363px;
+    left: 371px;
+    top: 257px;
+    border-radius: 15px;
+}
 
-    background: #D9D9D9;
+.save {
+    width: 152px;
+    height: 32px;
+    left: 432px;
+    top: 316px;
+
+    background: #3523A9;
+    border-radius: 10px;
+    border: none;
+}
+
+.input {
+    width: 599px;
+    height: 363px;
+    left: 371px;
+    top: 257px;
+
+    background-color: rgba(253, 252, 252, 0.82);
+    /* opacity:0.2; */
+    border-radius: 15px;
+    border: none;
+}
+
+.close {
+    position: absolute;
+    width: 152px;
+    height: 32px;
+    left: 450px;
+    top: 365px;
+
+    background: #3523A9;
+    border-radius: 10px;
+    border: none;
 }
