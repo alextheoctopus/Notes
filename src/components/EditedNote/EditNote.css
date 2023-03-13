@@ -1,7 +1,7 @@
-.editedNote {
+.editNote {
     position: absolute;
-    width: 599px;
-    height: 363px;
+    width: 610px;
+    height: 163px;
     left: 371px;
     top: 257px;
     border-radius: 15px;
@@ -13,8 +13,8 @@
     position: absolute;
     width: 152px;
     height: 32px;
-    left: 432px;
-    top: 316px;
+    left: 422px;
+    top: 128px;
 
     background: #3523A9;
     border-radius: 10px;
@@ -23,13 +23,24 @@
 
 }
 
-.entryField,.input {
-    width: 599px;
-    height: 363px;
+.close {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    left: 575px;
+    top: 128px;
+
+    background: #3523A9;
+    border-radius: 10px;
+    border: none;
+    color: whitesmoke;
+}
+
+.input {
+    width: 605px;
+    height: 63px;
     left: 371px;
     top: 257px;
-    padding-left: 20px;
-    padding-top: 20px;
 
     background-color: rgba(253, 252, 252, 0.82);
     /* opacity:0.2; */

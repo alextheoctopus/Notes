@@ -31,16 +31,3 @@
     border: none;
     color:whitesmoke;
 }
-
-.delete {
-    position: absolute;
-    width: 113px;
-    height: 32px;
-    left: 188px;
-    top: 10px;
-
-    background: #3523A9;
-    border-radius: 10px;
-    border: none;
-    color:whitesmoke;
-}

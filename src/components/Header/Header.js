@@ -1,8 +1,8 @@
 import './Header.css';
-const Header = ({ setOpenedNote }) => {
+const Header = ({ setCreateNote }) => {
 
     const btnOnclickHandlerCreate = () => {
-        setOpenedNote({state:true,value:''});
+        setCreateNote();
     }
 
     return (

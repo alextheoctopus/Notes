@@ -1,34 +1,57 @@
 import { useState } from "react";
-import OpenedNote from './components/OpenedNote/OpenedNote';
-import Note from "./components/Note/Note";
 import './App.css';
 import Header from "./components/Header/Header";
-import EditedNote from "./components/EditedNote/EditedNote";
+import EditNote from "./components/EditedNote/EditNote";
+import NoteList from "./components/NoteList/NoteList";
 const App = () => {
 
+  const localNotes = JSON.parse(localStorage.getItem('notes'));
 
-  const [notes, setNotes] = useState([{ id: 1, value: 'first note' }]);
-  const [openedNote, setOpenedNote] = useState({ state: false, text: '' });
-  const [editedNote, setEditedNote] = useState({ id:0, state: false, text: 'first note' });
+  const [notes, setNotes] = useState(localNotes || [{ id: 0, value: 'first note' }]);
+  const [noteData, setNoteData] = useState({});
+  const [openEditNote, setOpenEditNote] = useState(false);
 
   const closeOpenedNote = () => {
-    setOpenedNote({ state: false });
+    setNoteData({});
+    setOpenEditNote(false);
   }
 
+  const setCreateNote = () => {
+    setOpenEditNote('create')
+  }
 
-  /* let localNotes = localStorage.getItem('notes');
- */
+  const setEditNote = (data) => {
+    setOpenEditNote('edit');
+    setNoteData(data);
+  }
+
+  const createNewNote = ({ value }) => {
+    notes.push({ id: notes.length, value });
+    localStorage.setItem('notes', JSON.stringify(notes));
+    setNotes(notes);
+    setOpenEditNote(false);
+  }
+
+  const changeNote = ({ id, value }) => {
+    const note = notes.find(note => note.id === id);
+    note.value = value;
+    localStorage.setItem('notes', JSON.stringify(notes));
+
+    setNotes(notes);
+    setOpenEditNote(false);
+  }
+
   return (
     <div className="wholeApp">
-      <Header setOpenedNote={setOpenedNote} />
-
-      {openedNote.state === true ? <OpenedNote setNotes={setNotes} openedNote={openedNote} closeOpenedNote={closeOpenedNote} notes={notes} setOpenedNote={setOpenedNote} />
-        : ''}
-      {editedNote.state ? <EditedNote editedNote={editedNote} setEditedNote={setEditedNote}></EditedNote> : ''}
-
-      <div key={notes.length}>
-        {notes.map((item,index ) => <Note key={index} id={index} data={item} editedNote={editedNote} setEditedNote={setEditedNote} />)}
-      </div>
+      <Header setCreateNote={setCreateNote} />
+      {openEditNote && <EditNote
+        changeNote={changeNote}
+        createNewNote={createNewNote}
+        closeOpenedNote={closeOpenedNote}
+        type={openEditNote}
+        noteData={noteData} />
+      }
+      <NoteList key={notes.length} notes={notes} setEditNote={setEditNote} />
 
     </div>
   )
