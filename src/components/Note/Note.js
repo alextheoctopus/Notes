@@ -1,21 +1,17 @@
 import './Note.css';
 
-const Note = ({ setOpenedNote, data }) => {
+const Note = ({ id, setEditedNote, data, editedNote }) => {
 
     const btnOnClickHandlerEdit = () => {
-        setOpenedNote({ state: true, text: data.value });
+        setEditedNote({ id: id, state: true, text: data.value });
     }
-
-    const btnOnClickHandlerDelete = () => {
-
-    }
+    console.log(editedNote.text)
 
     return (
         <>
             <div className="noteList" >
                 <button className="edit" onClick={btnOnClickHandlerEdit}>Редактировать</button>
-                <button className="delete" onClick={btnOnClickHandlerDelete}>Удалить</button>
-                <p className="text1">{data.value}</p>
+                {editedNote.text != data.value ? <p className="text1">{editedNote.text}</p> : <p className="text1">{data.value}</p>}
             </div>
         </>
 
