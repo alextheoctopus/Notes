@@ -3,7 +3,7 @@ import './Note.css';
 const Note = ({ setOpenedNote, data }) => {
 
     const btnOnClickHandlerEdit = () => {
-        setOpenedNote({ state: true, text: data});
+        setOpenedNote({ state: true, text: data.value });
     }
 
     const btnOnClickHandlerDelete = () => {

@@ -13,10 +13,8 @@ const App = () => {
     setOpenedNote({ state: false });
   }
 
-  /* 
-    let localNotes = localStorage.getItem('notes');
-  
-    setNotes(JSON.parse(localNotes)); */
+
+  let localNotes = localStorage.getItem('notes');
 
   return (
     <div className="wholeApp">
@@ -26,7 +24,7 @@ const App = () => {
         : ''}
 
       <div key={notes.length}>
-        {notes && notes.map((item, index) => <Note key={index} openedNote={openedNote} data={item} />)}
+        {localNotes && localNotes.map((item, index) => <Note key={index} openedNote={openedNote} data={item} />)}
       </div>
     </div>
   )
