@@ -1,9 +1,9 @@
 import './Note.css';
 
-const Note = ({ data }) => {
+const Note = ({ setOpenedNote, data }) => {
 
     const btnOnClickHandlerEdit = () => {
-        //setEditNote(true);
+        setOpenedNote({ state: true, text: data});
     }
 
     const btnOnClickHandlerDelete = () => {

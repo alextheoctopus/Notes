@@ -7,25 +7,26 @@ const App = () => {
 
 
   const [notes, setNotes] = useState([{ id: 1, value: 'first note' }]);
-  const [openedNote, setOpenedNote] = useState({ state: false });
-
+  const [openedNote, setOpenedNote] = useState({ state: false, text: '' });
 
   const closeOpenedNote = () => {
     setOpenedNote({ state: false });
   }
 
-
-  console.log(notes);
+  /* 
+    let localNotes = localStorage.getItem('notes');
+  
+    setNotes(JSON.parse(localNotes)); */
 
   return (
     <div className="wholeApp">
       <Header setOpenedNote={setOpenedNote} />
 
-      {openedNote.state === true ?
-        <OpenedNote setNotes={setNotes} closeOpenedNote={closeOpenedNote} notes={notes} setOpenedNote={setOpenedNote} />
+      {openedNote.state === true ? <OpenedNote setNotes={setNotes} openedNote={openedNote} closeOpenedNote={closeOpenedNote} notes={notes} setOpenedNote={setOpenedNote} />
         : ''}
+
       <div key={notes.length}>
-        {notes.map((item, index) => <Note key={index} openedNote={openedNote} data={item} />)}
+        {notes && notes.map((item, index) => <Note key={index} openedNote={openedNote} data={item} />)}
       </div>
     </div>
   )
